@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Button from '../Button'
 
 const buttons = [
@@ -16,5 +17,9 @@ const Keypad = ({ onClick }) => (
     ))}
   </div>
 )
+
+Keypad.propTypes = {
+  onClick: PropTypes.func.isRequired
+}
 
 export default Keypad

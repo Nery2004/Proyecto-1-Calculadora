@@ -1,21 +1,20 @@
 export const calculate = (a, b, operation) => {
   const numA = parseFloat(a)
   const numB = parseFloat(b)
-  
   try {
-    switch(operation) {
-      case '+': 
+    switch (operation) {
+      case '+':
         return numA + numB
-      case '-': 
+      case '-':
         return numA - numB
-      case '*': 
+      case '*':
         return numA * numB
-      case '/': 
+      case '/':
         if (numB === 0) throw new Error('Division by zero')
         return numA / numB
-      case '%': 
+      case '%':
         return numA % numB
-      default: 
+      default:
         return numB
     }
   } catch (error) {
@@ -25,23 +24,19 @@ export const calculate = (a, b, operation) => {
 
 export const validateDisplay = (value) => {
   if (value === 'ERROR') return 'ERROR'
-  
   const strValue = value.toString()
   const numValue = parseFloat(value)
-  
   // Verificación de errores
   if (strValue === '-') return 'ERROR'
   if (numValue < 0) return 'ERROR'
   if (numValue > 999999999) return 'ERROR'
   if (strValue.length > 9 && !strValue.includes('.')) return 'ERROR'
-  
   // Manejo de decimales sin truncar números enteros
   if (strValue.includes('.')) {
     const [integer, decimal] = strValue.split('.')
     if (integer.length > 9) return 'ERROR'
     return `${integer.slice(0, 9)}.${decimal}`.slice(0, 10)
   }
-  
   return strValue.slice(0, 9)
 }
 
