@@ -1,0 +1,21 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "jest": true
+  },
+  "extends": [
+    "standard",
+    "plugin:react/recommended"
+  ],
+  "rules": {
+    "semi": ["error", "never"],
+    "react/react-in-jsx-scope": "off",
+    "space-before-function-paren": ["error", "always"]
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}
