@@ -21,6 +21,14 @@ export const calculate = (a, b, operation) => {
     return NaN // Para manejar errores como división por cero
   }
 }
+export const isOverflow = (number) => {
+  if (isNaN(number)) return true
+  return number > 999999999 || number < -999999999
+}
+
+export const isValidInput = (input) => {
+  return input.length <= 9 && input !== '-'
+}
 
 export const validateDisplay = (value) => {
   if (value === 'ERROR') return 'ERROR'
