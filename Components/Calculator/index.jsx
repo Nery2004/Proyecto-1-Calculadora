@@ -2,14 +2,15 @@ import React from 'react'
 import Display from '../Display'
 import Keypad from '../Keypad'
 import useCalculator from '../../hooks/useCalculator'
-import '../../src/Calculator.css'
 
 const Calculator = () => {
   const { display, handleButtonClick } = useCalculator()
 
   return (
     <div className="calculator">
-      <Display value={display} />
+      <div className="display-container">
+        <Display value={display} />
+      </div>
       <Keypad onClick={handleButtonClick} />
     </div>
   )
